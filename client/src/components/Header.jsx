@@ -13,7 +13,7 @@ import { FaMoon } from "react-icons/fa";
 const Header = () => {
   const path = useLocation().pathname;
   return (
-    <Navbar className="border-b-2">
+    <Navbar className="border-b-2 py-6">
       <Link
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-extrabold dark:text-white"
@@ -23,7 +23,7 @@ const Header = () => {
         </span>
         HUB
       </Link>
-      <form>
+      <form className="lg:w-[400px]">
         <TextInput
           type="text"
           placeholder="Search..."
@@ -39,21 +39,39 @@ const Header = () => {
           <FaMoon />
         </Button>
         <Link to="/sign-in">
-          <Button gradientDuoTone="purpleToBlue" pill>
+          <Button gradientDuoTone="purpleToBlue" outline>
             Sign in
           </Button>
         </Link>
         <NavbarToggle />
       </div>
       <NavbarCollapse>
-        <Navbar.Link active={path === "/"} as={"div"}>
-          <Link to="/">Home</Link>
+        <Navbar.Link
+          active={path === "/"}
+          as={"div"}
+          className="bg-transparent text-black hover:bg-slate-100"
+        >
+          <Link to="/" className="text-[18px]">
+            Home
+          </Link>
         </Navbar.Link>
-        <Navbar.Link active={path === "/about"} as={"div"}>
-          <Link to="/about">About</Link>
+        <Navbar.Link
+          active={path === "/about"}
+          as={"div"}
+          className="bg-transparent text-black hover:bg-slate-100"
+        >
+          <Link to="/about" className="text-[18px]">
+            About
+          </Link>
         </Navbar.Link>
-        <Navbar.Link active={path === "/projects"} as={"div"}>
-          <Link to="/projects">Projects</Link>
+        <Navbar.Link
+          active={path === "/projects"}
+          as={"div"}
+          className="bg-transparent text-black hover:bg-slate-100"
+        >
+          <Link to="/projects" className="text-[18px]">
+            Projects
+          </Link>
         </Navbar.Link>
       </NavbarCollapse>
     </Navbar>
