@@ -1,7 +1,46 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Alert, Spinner } from "flowbite-react";
 
 const SignUp = () => {
+  const [formData, setFormData] = useState({});
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
+  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!formData.username || !formData.password || !formData.email) {
+      return setErrorMessage("All fields are required!");
+    }
+    try {
+      setLoading(true);
+      setErrorMessage(null);
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json();
+
+      setErrorMessage(data.message);
+
+      /*if (data.success === false) {
+        console.log(data.success);
+        return;
+      }*/
+      setLoading(false);
+      if (res.ok) {
+        navigate("/signin");
+      }
+    } catch (err) {
+      setErrorMessage(err.message);
+      setLoading(false);
+    }
+  };
   return (
     <div className=" container max-sm:px-5">
       <div className="flex flex-col mt-[150px] min-h-screen  sm:flex-row max-sm:mt-4">
@@ -25,40 +64,51 @@ const SignUp = () => {
             <h1 className="text-4xl  mb-5 text-[#FF6452]">Sign up</h1>
           </div>
 
-          <div className="rightside sm:max-w-md">
-            <form className="flex flex-col gap-4">
+          <div className=" rightside sm:max-w-md">
+            <form className="flex flex-col gap-4" onSubmit={handleSubmit}>
               <div className="flex flex-col">
                 <label>Your username</label>
                 <input
                   type="text"
                   placeholder="Username"
                   id="username"
-                  className="bg-slate-100 rounded-md text-slate-100 font-normal"
+                  className="bg-slate-100 rounded-md  font-normal"
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="flex flex-col">
                 <label>Your email</label>
                 <input
-                  type="text"
+                  type="email"
                   placeholder="name@company.com"
                   id="email"
-                  className="bg-slate-100 rounded-md  text-slate-100 font-normal"
+                  className="bg-slate-100 rounded-md   font-normal"
+                  onChange={handleChange}
                 ></input>
               </div>
               <div className="flex flex-col">
                 <label>Your password</label>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   id="password"
-                  className="bg-slate-100 rounded-md  text-slate-100 font-normal"
+                  className="bg-slate-100 rounded-md   font-normal"
+                  onChange={handleChange}
                 ></input>
               </div>
               <button
                 type="submit"
-                className="gradient p-3 rounded-md text-white"
+                className="gradient p-3 rounded-md text-white hover:opacity-75"
+                disabled={loading}
               >
-                Sign up
+                {loading ? (
+                  <>
+                    <Spinner size="sm" />
+                    <span className="px-3 text-black"> Loading...</span>
+                  </>
+                ) : (
+                  "Sign up"
+                )}
               </button>
             </form>
             <div className="mt-1">
@@ -67,6 +117,11 @@ const SignUp = () => {
                 Sign in here
               </Link>
             </div>
+            {errorMessage && (
+              <Alert className="mt-5" color="failure">
+                {errorMessage}
+              </Alert>
+            )}
           </div>
         </div>
       </div>
