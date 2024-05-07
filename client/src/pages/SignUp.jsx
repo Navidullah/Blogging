@@ -46,12 +46,11 @@ const SignUp = () => {
       <div className="flex flex-col mt-[150px] min-h-screen  sm:flex-row max-sm:mt-4">
         <div className="leftside sm:flex-1">
           <Link to="/" className="flex items-center h_font">
-            <span className="text-3xl sm:text-5xl font-extrabold gradient text-white p-3 rounded-md ">
-              HEADLINES{" "}
+            <span className="text-3xl cinzel_font rounded-lg sm:text-5xl font-extrabold bg-[#ffde59] text-black p-4">
+              TP
             </span>
-            <span className="text-4xl font-extrabold  text-black dark:text-white">
-              {" "}
-              HUB
+            <span className="text-4xl livvic_font font-extrabold  text-black dark:text-white">
+              THE PULSE
             </span>
           </Link>
           <p className="text-slate-700 mt-3 mb-3 text-2xl sm:max-w-lg">
