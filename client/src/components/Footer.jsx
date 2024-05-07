@@ -12,17 +12,17 @@ import {
 const FooterC = () => {
   return (
     <div className="container  border border-gray-100 p-6">
-      <div className="flex items-center">
-        <div className="flex-1 ">
+      <div className=" flex flex-col sm:flex-row">
+        <div className="flex-1 py-4 flex justify-center sm:inline">
           <img
             src={logo}
             alt="logo"
             width="300"
             height="300"
-            className="rounded-full"
+            className="rounded-full w-32 h-32 sm:w-[300px] sm:h-[300px]"
           ></img>
         </div>
-        <div className=" flex-1 flex justify-between">
+        <div className=" flex-1 flex justify-between gap-4 sm:gap-0">
           <div className="flex flex-col  gap-2">
             <span className="livvic_font">RESOURCES</span>
             <span className="font-normal text-slate-500 hover:cursor-pointer">
@@ -53,7 +53,7 @@ const FooterC = () => {
               Privacy Policies
             </span>
             <span className="font-normal text-slate-500 hover:cursor-pointer">
-              Terms and Conditions
+              Terms & Conditions
             </span>
             <span className="font-normal text-slate-500 hover:cursor-pointer">
               About us
@@ -64,7 +64,7 @@ const FooterC = () => {
       <div className="py-10">
         <hr />
       </div>
-      <div className="flex justify-between mt-4">
+      <div className="flex flex-col gap-4 items-center sm:flex-row justify-between mt-4">
         <div>
           <Footer.Copyright
             href="#"
