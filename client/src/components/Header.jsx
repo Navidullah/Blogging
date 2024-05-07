@@ -18,10 +18,12 @@ const Header = () => {
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-extrabold dark:text-white"
       >
-        <span className="bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 px-2 py-1 text-white rounded-md">
-          HEADLINES
+        <span className="bg-[#ffde59] text-3xl cinzel_font font-bold px-4 py-4 text-black rounded-full">
+          TP
+        </span>{" "}
+        <span className="livvic_font font-semibold tracking-wide">
+          THE PULSE
         </span>
-        HUB
       </Link>
       <form className="lg:w-[400px]">
         <TextInput
