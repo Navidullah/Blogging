@@ -112,9 +112,10 @@ const SignUp = () => {
             </form>
             <div className="mt-1">
               <span>Have Already an Account? </span>
-              <Link to="/sign-in" className="text-blue-700">
-                Sign in here
-              </Link>
+              <Link to="/signin" className="text-blue-700">
+                Sign in
+              </Link>{" "}
+              here
             </div>
             {errorMessage && (
               <Alert className="mt-5" color="failure">
