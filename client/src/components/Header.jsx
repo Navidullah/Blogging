@@ -13,7 +13,7 @@ import { FaMoon } from "react-icons/fa";
 const Header = () => {
   const path = useLocation().pathname;
   return (
-    <Navbar className="border-b-2 py-6">
+    <Navbar className="border-b-2 py-6 ">
       <Link
         to="/"
         className="self-center whitespace-nowrap text-sm sm:text-xl font-extrabold dark:text-white"

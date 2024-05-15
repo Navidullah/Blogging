@@ -11,7 +11,7 @@ import {
 
 const FooterC = () => {
   return (
-    <div className="container  border border-gray-100 p-6">
+    <div className="w-full bg-[#303846]  p-6">
       <div className=" flex flex-col sm:flex-row">
         <div className="flex-1 py-4 flex justify-center sm:inline">
           <img
@@ -24,38 +24,38 @@ const FooterC = () => {
         </div>
         <div className=" flex-1 flex justify-between gap-4 sm:gap-0">
           <div className="flex flex-col  gap-2">
-            <span className="livvic_font">RESOURCES</span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="livvic_font  text-white">RESOURCES</span>
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Flowbite
             </span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Tailwind css
             </span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Bootstrap
             </span>
           </div>
           <div className="flex flex-col  gap-2">
-            <span className="livvic_font">FOLLOW US</span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="livvic_font text-white">FOLLOW US</span>
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Facebook
             </span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Github
             </span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Youtube
             </span>
           </div>
           <div className="flex flex-col gap-2">
-            <span className="livvic_font">LEGAL</span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="livvic_font text-white">LEGAL</span>
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Privacy Policies
             </span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               Terms & Conditions
             </span>
-            <span className="font-normal text-slate-500 hover:cursor-pointer">
+            <span className="font-normal text-slate-500 hover:cursor-pointer hover:text-white">
               About us
             </span>
           </div>
@@ -75,19 +75,19 @@ const FooterC = () => {
         </div>
         <div className="flex">
           <div className="px-5 text-2xl  hover:cursor-pointer">
-            <FaFacebook />
+            <FaFacebook color="white" />
           </div>
           <div className="px-5 text-2xl hover:cursor-pointer">
-            <FaTwitter />
+            <FaTwitter color="white" />
           </div>
           <div className="px-5 text-2xl hover:cursor-pointer">
-            <FaGoogle />
+            <FaGoogle color="white" />
           </div>
           <div className="px-5 text-2xl hover:cursor-pointer">
-            <FaInstagram />
+            <FaInstagram color="white" />
           </div>
           <div className="px-5 text-2xl hover:cursor-pointer">
-            <FaGithub />
+            <FaGithub color="white" />
           </div>
         </div>
       </div>
