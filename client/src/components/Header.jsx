@@ -1,4 +1,4 @@
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import {
   Avatar,
   Button,
@@ -10,11 +10,14 @@ import {
 } from "flowbite-react";
 import { Link, useLocation } from "react-router-dom";
 import { IoMdSearch } from "react-icons/io";
-import { FaMoon } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
+import { toggleTheme } from "../redux/theme/themeSlice.js";
 
 const Header = () => {
   const path = useLocation().pathname;
+  const dispatch = useDispatch();
   const { currentUser } = useSelector((state) => state.user);
+  const { theme } = useSelector((state) => state.theme);
   const handleSignout = async () => {};
   return (
     <Navbar className="border-b-2 py-6 ">
@@ -41,8 +44,13 @@ const Header = () => {
         </Button>
       </form>
       <div className="flex gap-2 md:order-2">
-        <Button className="w-12 h-10 hidden sm:inline" color="gray" pill>
-          <FaMoon />
+        <Button
+          className="w-12 h-10 hidden sm:inline"
+          color="gray"
+          pill
+          onClick={() => dispatch(toggleTheme())}
+        >
+          {theme === "light" ? <FaSun /> : <FaMoon />}
         </Button>
         {currentUser ? (
           <Dropdown
